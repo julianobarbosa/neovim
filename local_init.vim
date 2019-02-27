@@ -1,8 +1,8 @@
 "----------------------------------------------------------
 " Neovim's Python provider
 "----------------------------------------------------------
-let g:python_host_prog  = '/home/juliano/.pyenv/versions/2.7.13/envs/neovim2/bin/python'
-let g:python3_host_prog  = '/home/juliano/.pyenv/versions/3.6.2/envs/neovim3/bin/python3'
+let g:python_host_prog  = '/home/juliano/.pyenv/versions/2.7.15/envs/neovim2/bin/python'
+let g:python3_host_prog  = '/home/juliano/.pyenv/versions/3.7.2/envs/neovim3/bin/python3'
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
