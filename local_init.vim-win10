@@ -1,0 +1,10 @@
+" MyConf
+let g:snips_author = "Juliano Barbosa"
+
+" let g:python_host_prog = '/full/path/to/neovim2/bin/python'
+let g:python3_host_prog = 'C:\\Users\\morais\\.neovim3\\Scripts\\python'
+
+"" fzf with powershell
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
+let $FZF_DEFAULT_COMMAND = 'powershell.exe -NoLogo -NoProfile -Noninteractive -Command "Get-ChildItem -File -Recurse | ForEach-Object {echo $_.FullName}"'
