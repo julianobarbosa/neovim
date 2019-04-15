@@ -75,6 +75,12 @@ set smarttab
 " accelerated scrolling
 set scrolljump=15
 
+" Searching
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase
+set smartcase
+
 " better vertial movement for wrapped lines
 nnoremap j gj
 nnoremap k gk
