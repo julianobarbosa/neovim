@@ -40,6 +40,57 @@ call plug#begin(expand('~\AppData\Local\nvim\plugged'))
 
 call plug#end()
 
+" Habit
+let mapleader = ','
+let tabstop = 4
+filetype plugin on
+
+"******************************************************************************
+"" Abbreviations
+"******************************************************************************
+"" no one is really happy until you have this shotcuts
+inoremap <F1> <Esc>
+inoremap <C-c> <Esc>
+inoremap <C-c> :w<CR>
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qall qall
+
+"******************************************************************************
+"" Copy/Paste/Cut
+"******************************************************************************
+if has('unnamedplus')
+  set clipboard=unnamed,unnamedplus
+endif
+
+noremap YY "+y<CR>
+noremap <leader>p "+gP<CR>
+noremap XX "+x<CR>
+
+if has('macunix')
+  " pbcopy for OSX copy/paste
+  vmap <C-x> :!pbcopy<CR>
+  vmap <C-c> :w !pbcopy<CR><CR>
+endif
+
+"" Buffer nav
+noremap <leader>z :bp<CR>
+noremap <leader>q :bp<CR>
+noremap <leader>x :bn<CR>
+noremap <leader>w :bn<CR>
+
+"" Close buffer
+noremap <leader>c :bd<CR>
+
+"" quickly cancel search highlighting
+nnoremap <leader><space> :nohlsearch<CR>
+
 "******************************************************************************
 "" Python configuration
 "******************************************************************************
