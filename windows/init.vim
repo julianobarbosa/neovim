@@ -61,8 +61,9 @@ set ruler
 " allow backspacin over everything in insert mode
 set backspace=indent,eol,start
 
-" save file when switching buffers
+" read/write file when switching buffers
 set autowrite
+set autoread
 
 " tab settings
 set shiftwidth = 4
@@ -70,6 +71,27 @@ set tabstop = 4
 set softtabstop = 4
 set expandtab
 set smarttab
+
+" accelerated scrolling
+set scrolljump=15
+
+" better vertial movement for wrapped lines
+nnoremap j gj
+nnoremap k gk
+
+" Put plugins and dictionaries in this dir (also on Windows)
+let vimDir = '~\AppData\Local\nvim'
+let &runtimepath.=','.vimDir
+
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+    let myUndoDir = expand(vimDir . '\undodir')
+    " Create dirs
+    call system('mkdir ' . vimDir)
+    call system('mkdir ' . myUndoDir)
+    let &undodir = myUndoDir
+    set undofile
+endif
 
 "******************************************************************************
 "" Abbreviations
@@ -148,7 +170,7 @@ let g:jedi#use_tabs_not_buffers = 1
 "******************************************************************************
 "" auto-pairs configuration
 "******************************************************************************
-" let g:AutoPairsMultilineClose = 0
+let g:AutoPairsMultilineClose = 0
 let g:AutoPairsMapSpace = 0
 
 "******************************************************************************
