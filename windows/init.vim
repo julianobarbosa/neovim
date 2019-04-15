@@ -132,6 +132,16 @@ let g:AutoPairsMapSpace = 0
 let g:airline#extensions#virtualenv#enabled = 1
 
 "******************************************************************************
+"" Windows Font
+"******************************************************************************
+"" set guifont=Menlo:11
+"" set guifont=Ubuntu\ Mono\ derivative\ Powerline:14
+"" set guifont=Go\ Mono\ for\ Powerline:12
+"" set guifont=InconsolataForPowerline\ NF:h10
+"" set guifont=Fira\ Mono\ for\ Powerline:h12
+set guifont=Anonymous\ Pro\ for\ Powerline:h13
+
+"******************************************************************************
 "" Colors schema
 "******************************************************************************
 let g:molokai_original = 1
@@ -173,5 +183,3 @@ let g:NERDCommentEmptyLines = 1
 
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
-
-2t6U3&PzS6X!
