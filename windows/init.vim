@@ -52,6 +52,15 @@ filetype plugin on
 set list
 set listchars=tab:▸\ ,eol:¬
 
+" Highligth the line the cursor is on.
+set cursorline
+
+" Show the cursor position all the time.
+set ruler
+
+" allow backspacin over everything in insert mode
+set backspace=indent,eol,start
+
 "******************************************************************************
 "" Abbreviations
 "******************************************************************************
