@@ -1,5 +1,5 @@
 " Plugin manager
-" Specify a directory for plugins
+ Specify a directory for plugins
 call plug#begin(expand('~\AppData\Local\nvim\plugged'))
 	" Use NerdTree for file browsing
 	Plug 'scrooloose/nerdtree'
@@ -10,6 +10,10 @@ call plug#begin(expand('~\AppData\Local\nvim\plugged'))
 	let g:nerdtree_tabs_focus_on_files = 1
 	let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 	let g:NERDTreeWinSize = 50
+
+	" Use nerdcommenter for comment
+	Plug 'scrooloose/nerdcommenter'
+
 call plug#end()
 
 
@@ -20,3 +24,33 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 nnoremap <leader>a :NERDTreeToggle<CR>
+
+"******************************************************************************
+"" NERDComment Settings 
+"******************************************************************************
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 
+		\ 'c': { 'left': '/**','right': '*/' },
+		\ 'py': { 'left': '#' },
+		\ 'sshconfig': { 'left': '#' },
+		\ 'sshdconfig': { 'left': '#' }
+		\ }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
