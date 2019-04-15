@@ -23,6 +23,11 @@ call plug#begin(expand('~\AppData\Local\nvim\plugged'))
 	" Auto close parens, braces, brackets, etc
 	Plug 'jiangmiao/auto-pairs'
 
+	" python
+	Plug 'davidhalter/jedi-vim'
+	Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+	Plug 'w0rp/ale'
+
 	" Nice status bar
 	Plug 'bling/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
@@ -34,6 +39,34 @@ call plug#begin(expand('~\AppData\Local\nvim\plugged'))
 	let g:airline#extensions#virtualenv#enabled = 1
 
 call plug#end()
+
+"******************************************************************************
+"" Python configuration
+"******************************************************************************
+" vim-python
+augroup vimrc-python
+  autocmd!
+  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
+      \ formatoptions+=croq softtabstop=4
+      \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+augroup END
+
+" jedi-vim
+let g:jedi#popup_on_dot = 0
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = "<leader>d"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#rename_command = "<leader>r"
+let g:jedi#show_call_signatures = "0"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#smart_auto_mappings = 0
+let g:jedi#force_py_version = 3
+let g:jedi#use_tabs_not_buffers = 1
+
+" ale
+:call extend(g:ale_linters, {
+    \'python': ['flake8'], })
 
 "******************************************************************************
 "" auto-pairs configuration
