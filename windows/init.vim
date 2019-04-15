@@ -20,6 +20,9 @@ call plug#begin(expand('~\AppData\Local\nvim\plugged'))
 	" Colors!
 	Plug 'tomasr/molokai'
 
+	" Show white space
+	Plug 'ntpeters/vim-better-whitespace'
+
 	" Auto close parens, braces, brackets, etc
 	Plug 'jiangmiao/auto-pairs'
 
