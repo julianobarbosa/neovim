@@ -23,6 +23,11 @@ call plug#begin(expand('~\AppData\Local\nvim\plugged'))
 	" Auto close parens, braces, brackets, etc
 	Plug 'jiangmiao/auto-pairs'
 
+	" python
+	Plug 'davidhalter/jedi-vim'
+	Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+	Plug 'w0rp/ale'
+
 	" Nice status bar
 	Plug 'bling/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
