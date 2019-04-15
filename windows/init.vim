@@ -14,6 +14,9 @@ call plug#begin(expand('~\AppData\Local\nvim\plugged'))
 	" Use nerdcommenter for comment
 	Plug 'scrooloose/nerdcommenter'
 
+	" Move to and from Tmux panes and Vim panes
+	Plug 'christoomey/vim-tmux-navigator'
+
 call plug#end()
 
 
@@ -54,3 +57,4 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
+2t6U3&PzS6X!
