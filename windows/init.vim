@@ -61,6 +61,9 @@ set ruler
 " allow backspacin over everything in insert mode
 set backspace=indent,eol,start
 
+" save file when switching buffers
+set autowrite
+
 "******************************************************************************
 "" Abbreviations
 "******************************************************************************
