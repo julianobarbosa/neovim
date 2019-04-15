@@ -125,6 +125,10 @@ let g:jedi#use_tabs_not_buffers = 1
 " let g:AutoPairsMultilineClose = 0
 let g:AutoPairsMapSpace = 0
 
+"******************************************************************************
+"" Enable Windows clipboard copy/paste
+"******************************************************************************
+source $VIMRUNTIME/mswin.vim
 
 "******************************************************************************
 "" vim-airline configuration
