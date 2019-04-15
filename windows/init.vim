@@ -17,8 +17,17 @@ call plug#begin(expand('~\AppData\Local\nvim\plugged'))
 	" Move to and from Tmux panes and Vim panes
 	Plug 'christoomey/vim-tmux-navigator'
 
+	" Colors!
+	Plug 'tomasr/molokai'
+
+
 call plug#end()
 
+"******************************************************************************
+"" Colors schema
+"******************************************************************************
+let g:molokai_original = 1
+colorscheme molokai
 
 "******************************************************************************
 "" NERDTree configuration
