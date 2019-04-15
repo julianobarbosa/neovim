@@ -20,6 +20,9 @@ call plug#begin(expand('~\AppData\Local\nvim\plugged'))
 	" Colors!
 	Plug 'tomasr/molokai'
 
+	" Auto close parens, braces, brackets, etc
+	Plug 'jiangmiao/auto-pairs'
+
 	" Nice status bar
 	Plug 'bling/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
@@ -31,6 +34,13 @@ call plug#begin(expand('~\AppData\Local\nvim\plugged'))
 	let g:airline#extensions#virtualenv#enabled = 1
 
 call plug#end()
+
+"******************************************************************************
+"" auto-pairs configuration
+"******************************************************************************
+" let g:AutoPairsMultilineClose = 0
+let g:AutoPairsMapSpace = 0
+
 
 "******************************************************************************
 "" vim-airline configuration
