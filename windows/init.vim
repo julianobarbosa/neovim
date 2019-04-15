@@ -45,6 +45,10 @@ let mapleader = ','
 let tabstop = 4
 filetype plugin on
 
+" Display hidden characters
+set list
+set listchars=tab:▸\ ,eol:¬
+
 "******************************************************************************
 "" Abbreviations
 "******************************************************************************
