@@ -64,6 +64,13 @@ set backspace=indent,eol,start
 " save file when switching buffers
 set autowrite
 
+" tab settings
+set shiftwidth = 4
+set tabstop = 4
+set softtabstop = 4
+set expandtab
+set smarttab
+
 "******************************************************************************
 "" Abbreviations
 "******************************************************************************
