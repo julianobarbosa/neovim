@@ -26,6 +26,9 @@ call plug#begin(expand('~\AppData\Local\nvim\plugged'))
 	" Auto close parens, braces, brackets, etc
 	Plug 'jiangmiao/auto-pairs'
 
+    " Indicator for what was yanked
+    Plug 'machakann/vim-highlightedyank'
+
     " Show git stuff in gutter
     Plug 'airblade/vim-gitgutter'
 
@@ -33,6 +36,9 @@ call plug#begin(expand('~\AppData\Local\nvim\plugged'))
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     
+    " Fuzzy finder
+    Plug 'junegunn/fzf'
+
 	" python
 	Plug 'davidhalter/jedi-vim'
 	Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
@@ -211,6 +217,13 @@ set guifont=Anonymous\ Pro\ for\ Powerline:h13
 "******************************************************************************
 let g:molokai_original = 1
 colorscheme molokai
+
+"******************************************************************************
+"" fzf
+"******************************************************************************
+if executable('fzf')
+    nnoremap <c-p> :fzf<cr>
+endif
 
 "******************************************************************************
 "" NERDTree configuration
