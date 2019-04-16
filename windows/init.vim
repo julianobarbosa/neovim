@@ -151,12 +151,24 @@ noremap <leader>z :bp<CR>
 noremap <leader>q :bp<CR>
 noremap <leader>x :bn<CR>
 noremap <leader>w :bn<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
 
 "" Close buffer
 noremap <leader>c :bd<CR>
 
 "" quickly cancel search highlighting
 nnoremap <leader><space> :nohlsearch<CR>
+
+"" Strip all trailing whitespace
+nnoremap <leader>f :StripWhitespace<CR>
+
+" Sort lines in alphabetical order
+vnoremap <leader>s :'<,'>!sort -f<cr>
+
+"******************************************************************************
+"" FZF Settings
+"******************************************************************************
+nnoremap <silent> <leader>e :FZF -m<CR>
 
 "******************************************************************************
 "" Python configuration
