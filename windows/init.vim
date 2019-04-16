@@ -26,6 +26,13 @@ call plug#begin(expand('~\AppData\Local\nvim\plugged'))
 	" Auto close parens, braces, brackets, etc
 	Plug 'jiangmiao/auto-pairs'
 
+    " Show git stuff in gutter
+    Plug 'airblade/vim-gitgutter'
+
+    " Git integration glore
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
+    
 	" python
 	Plug 'davidhalter/jedi-vim'
 	Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
