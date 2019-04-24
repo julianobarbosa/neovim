@@ -1,12 +1,14 @@
 " Set VIM home
 if has('win32')
     let g:VIM_HOME = expand('$HOME\AppData\Local\nvim\plugged')
+    let g:python_host_prog=expand('$HOME\.virtualenvs\neovim3\Scripts\python')
     let g:python2_host_prog=expand('$HOME\.virtualenvs\neovim2\Scripts\python')
     let g:python3_host_prog=expand('$HOME\.virtualenvs\neovim3\Scripts\python')
 else
     let g:VIM_HOME = expand('$HOME/.config/nvim/plugged')
-    let g:python2_host_prog=expand('$HOME/.pyenv/versions/neovim2/Scripts/python')
-    let g:python3_host_prog=expand('$HOME/.pyenv/versions/neovim3/Scripts/python')
+    let g:python_host_prog=expand('$HOME/.pyenv/versions/neovim3/bin/python')
+    let g:python2_host_prog=expand('$HOME/.pyenv/versions/neovim2/bin/python')
+    let g:python3_host_prog=expand('$HOME/.pyenv/versions/neovim3/bin/python')
 endif
 
 " Plugin manager
