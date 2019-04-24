@@ -74,6 +74,7 @@ call plug#begin(g:VIM_HOME)
     Plug 'davidhalter/jedi-vim'
     Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
     Plug 'w0rp/ale'
+    Plug 'plytophogy/vim-virtualenv'
 
     " Language Protocol Server and autocompelete
     Plug 'prabirshrestha/async.vim'
