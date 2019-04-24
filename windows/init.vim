@@ -1,6 +1,16 @@
+" Set VIM home
+if has('win32')
+    let g:VIM_HOME = expand('$HOME\AppData\Local\nvim\plugged')
+    let g:python2_host_prog=expand('$HOME\.virtualenvs\neovim2\Scripts\python')
+    let g:python3_host_prog=expand('$HOME\.virtualenvs\neovim3\Scripts\python')
+else
+    let g:VIM_HOME = expand('$HOME/.config/nvim/plugged')
+    let g:python2_host_prog=expand('$HOME/.pyenv/versions/neovim2/Scripts/python')
+    let g:python3_host_prog=expand('$HOME/.pyenv/versions/neovim3/Scripts/python')
+endif
+
 " Plugin manager
- Specify a directory for plugins
-call plug#begin(expand('~\AppData\Local\nvim\plugged'))
+call plug#begin(g:VIM_HOME)
     " Use NerdTree for file browsing
     Plug 'scrooloose/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -27,7 +37,7 @@ call plug#begin(expand('~\AppData\Local\nvim\plugged'))
     Plug 'ntpeters/vim-better-whitespace'
 
     " Auto close parens, braces, brackets, etc
-    Plug 'jiangmiao/auto-pairs'
+   Plug 'jiangmiao/auto-pairs'
 
     " Indicator for what was yanked
     Plug 'machakann/vim-highlightedyank'
@@ -70,7 +80,7 @@ call plug#begin(expand('~\AppData\Local\nvim\plugged'))
     Plug 'prabirshrestha/vim-lsp'
     Plug 'ncm2/ncm2'
     Plug 'ncm2/ncm2-bufword'
-    Plug "ncm2/ncm2-match-highlight"
+    Plug 'ncm2/ncm2-match-highlight'
     Plug 'ncm2/ncm2-path'
     Plug 'ncm2/ncm2-vim-lsp'
     Plug 'roxma/nvim-yarp'
@@ -151,14 +161,20 @@ nnoremap j gj
 nnoremap k gk
 
 " Put plugins and dictionaries in this dir (also on Windows)
-let vimDir='~\AppData\Local\nvim'
-let &runtimepath.=','.vimDir
+if has('win32')
+  let &runtimepath.=','.expand(g:VIM_HOME)
+endif
 
 " Keep undo history across sessions by storing it in a file
 if has('persistent_undo')
-    let myUndoDir=expand(vimDir . '\undodir')
+    if has("win32")
+        let myUndoDir=expand(g:VIM_HOME . '\undodir')
+    else
+        let myUndoDir=expand(g:VIM_HOME . '/undodir')
+    endif
+
     " Create dirs
-    call system('mkdir ' . vimDir)
+    call system('mkdir ' . g:VIM_HOME)
     call system('mkdir ' . myUndoDir)
     let &undodir=myUndoDir
     set undofile
@@ -305,7 +321,7 @@ endif
 "******************************************************************************
 if executable('ag')
   let g:ackprg='ag --vimgrep'
-  nnoremap <leader>r :Ack! 
+  nnoremap <leader>r :Ack!
 endif
 
 " Toggle quickfix windown
@@ -325,19 +341,19 @@ endfunction
 "******************************************************************************
 "" [Chiel92/vim-autoformat]
 "******************************************************************************
-noremap <F3> :Autoformat<cr>
+noremap <F4> :Autoformat<cr>
 
 "******************************************************************************
 "" [scrooloose/nerdtree]
 "******************************************************************************
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<cr>
-" nnoremap <silent> <F3> :NERDTreeToggle<cr>
+nnoremap <silent> <F3> :NERDTreeToggle<cr>
 nnoremap <silent> <C-n> :NERDTreeToggle<cr>
-nnoremap <leader>a :NERDTreeToggle<cr>
+nnoremap <leader>o :NERDTreeToggle<cr>
 
 "******************************************************************************
-"" NERDComment Settings 
+"" NERDComment Settings
 "******************************************************************************
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims=1
@@ -352,7 +368,7 @@ let g:NERDDefaultAlign='left'
 let g:NERDAltDelims_java=1
 
 " Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters={ 
+let g:NERDCustomDelimiters={
 		\ 'c': { 'left': '/**','right': '*/' },
 		\ 'py': { 'left': '#' },
 		\ 'sshconfig': { 'left': '#' },
