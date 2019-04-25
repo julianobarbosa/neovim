@@ -201,6 +201,16 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 
 "******************************************************************************
+"" TERMINAL Configuration
+"******************************************************************************
+nnoremap <silent> <leader>t :terminal<CR>
+
+augroup vimrc-terminal
+  autocmd!
+  autocmd TermOpen * setl nocursorline | IndentLinesDisable
+augroup END
+
+"******************************************************************************
 "" Copy/Paste/Cut
 "******************************************************************************
 if has('unnamedplus')
