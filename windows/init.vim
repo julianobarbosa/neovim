@@ -365,6 +365,10 @@ nnoremap <silent> <F3> :NERDTreeToggle<cr>
 nnoremap <silent> <C-n> :NERDTreeToggle<cr>
 nnoremap <leader>o :NERDTreeToggle<cr>
 
+" auto open or close NERDTree
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 "******************************************************************************
 "" NERDComment Settings
 "******************************************************************************
