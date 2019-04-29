@@ -89,6 +89,9 @@ call plug#begin(g:VIM_HOME)
     Plug 'roxma/nvim-yarp'
     Plug 'ncm2/ncm2-jedi'
 
+    " Wakatime
+    Plug 'wakatime/vim-wakatime'
+
     " Icons
     Plug 'ryanoasis/vim-devicons'
 
