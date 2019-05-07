@@ -89,9 +89,6 @@ call plug#begin(g:VIM_HOME)
     Plug 'roxma/nvim-yarp'
     Plug 'ncm2/ncm2-jedi'
 
-    " Wakatime
-    Plug 'wakatime/vim-wakatime'
-
     " Icons
     Plug 'ryanoasis/vim-devicons'
 
@@ -245,7 +242,7 @@ noremap <leader>z :bp<cr>
 noremap <leader>q :bp<cr>
 noremap <leader>x :bn<cr>
 noremap <leader>w :bn<cr>
-nnoremap <silent> <leader>b :buffers<cr>
+nnoremap <silent> <leader>b :ls<cr>:b<space>
 
 "" Close buffer
 noremap <leader>c :bd<cr>
