@@ -16,6 +16,7 @@ call plug#begin(g:VIM_HOME)
     " Use NerdTree for file browsing
     Plug 'scrooloose/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
+    let NERDTreeQuitOnOpen = 1
     let g:NERDTreeChDirMode=2
     let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
     let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
