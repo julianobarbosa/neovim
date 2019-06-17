@@ -119,6 +119,11 @@ nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nnoremap <silent> <S-t> :tabnew<cr>
 
+" edit vimrc/zshrc and load vimrc bindings
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>ez :vsp ~/.zshrc<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+
 " See help fo
 set formatoptions=qrnj1
 
