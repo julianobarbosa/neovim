@@ -163,6 +163,10 @@ set smartcase
 nnoremap j gj
 nnoremap k gk
 
+" move to beginning/end of line
+nnoremap B ^
+nnoremap E $
+
 " Put plugins and dictionaries in this dir (also on Windows)
 if has('win32')
   let &runtimepath.=','.expand(g:VIM_HOME)
