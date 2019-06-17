@@ -44,6 +44,9 @@ call plug#begin(g:VIM_HOME)
     " Indicator for what was yanked
     Plug 'machakann/vim-highlightedyank'
 
+    " Make
+    Plug 'neomake/neomake'
+
     " Show git stuff in gutter
     Plug 'airblade/vim-gitgutter'
 
