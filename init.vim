@@ -298,8 +298,9 @@ let g:jedi#use_tabs_not_buffers=1
 "******************************************************************************
 "" Quickly open/reload vim
 "******************************************************************************
-nnoremap <leader>ev :tabedit $MYVIMRC<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>ez :vsp ~/.zshrc<CR>
+nnoremap <leader>sv :vsp $MYVIMRC<CR>
 
 "******************************************************************************
 "" auto-pairs configuration
