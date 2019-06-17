@@ -241,6 +241,12 @@ nnoremap <silent> <leader>b :buffers<cr>
 "" Close buffer
 noremap <leader>c :bd<cr>
 
+" space open/closes folds
+set nofoldenable                " disable folding
+set foldnestmax=10              " 10 nested fold max
+set foldmethod=indent            " fold based on indent level
+nnoremap <space> za
+
 "" quickly cancel search highlighting
 nnoremap <leader><space> :nohlsearch<cr>
 
