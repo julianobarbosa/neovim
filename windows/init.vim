@@ -114,6 +114,9 @@ let tabstop=4
 
 filetype plugin on
 
+" jk is escape
+inoremap jk <esc>
+
 "" Tabs
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
