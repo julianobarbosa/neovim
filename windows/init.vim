@@ -1,12 +1,14 @@
 " Set VIM home
 if has('win32')
     let g:VIM_HOME = expand('$HOME\AppData\Local\nvim\plugged')
+    let g:python_host_prog=expand('$HOME\.virtualenvs\neovim3\Scripts\python')
     let g:python2_host_prog=expand('$HOME\.virtualenvs\neovim2\Scripts\python')
     let g:python3_host_prog=expand('$HOME\.virtualenvs\neovim3\Scripts\python')
 else
     let g:VIM_HOME = expand('$HOME/.config/nvim/plugged')
-    let g:python2_host_prog=expand('$HOME/.pyenv/versions/neovim2/Scripts/python')
-    let g:python3_host_prog=expand('$HOME/.pyenv/versions/neovim3/Scripts/python')
+    let g:python_host_prog=expand('$HOME/.pyenv/versions/neovim3/bin/python')
+    let g:python2_host_prog=expand('$HOME/.pyenv/versions/neovim2/bin/python')
+    let g:python3_host_prog=expand('$HOME/.pyenv/versions/neovim3/bin/python')
 endif
 
 " Plugin manager
@@ -14,6 +16,7 @@ call plug#begin(g:VIM_HOME)
     " Use NerdTree for file browsing
     Plug 'scrooloose/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
+    let NERDTreeQuitOnOpen = 1
     let g:NERDTreeChDirMode=2
     let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
     let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
@@ -74,6 +77,7 @@ call plug#begin(g:VIM_HOME)
     Plug 'davidhalter/jedi-vim'
     Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
     Plug 'w0rp/ale'
+    Plug 'plytophogy/vim-virtualenv'
 
     " Language Protocol Server and autocompelete
     Plug 'prabirshrestha/async.vim'
@@ -85,6 +89,9 @@ call plug#begin(g:VIM_HOME)
     Plug 'ncm2/ncm2-vim-lsp'
     Plug 'roxma/nvim-yarp'
     Plug 'ncm2/ncm2-jedi'
+
+    " Wakatime
+    Plug 'wakatime/vim-wakatime'
 
     " Icons
     Plug 'ryanoasis/vim-devicons'
@@ -198,6 +205,16 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 
 "******************************************************************************
+"" TERMINAL Configuration
+"******************************************************************************
+nnoremap <silent> <leader>t :terminal<CR>
+
+augroup vimrc-terminal
+  autocmd!
+  autocmd TermOpen * setl nocursorline | IndentLinesDisable
+augroup END
+
+"******************************************************************************
 "" Copy/Paste/Cut
 "******************************************************************************
 if has('unnamedplus')
@@ -229,7 +246,7 @@ noremap <leader>z :bp<cr>
 noremap <leader>q :bp<cr>
 noremap <leader>x :bn<cr>
 noremap <leader>w :bn<cr>
-nnoremap <silent> <leader>b :buffers<cr>
+nnoremap <silent> <leader>b :ls<cr>:b<space>
 
 "" Close buffer
 noremap <leader>c :bd<cr>
@@ -351,6 +368,10 @@ nnoremap <silent> <F2> :NERDTreeFind<cr>
 nnoremap <silent> <F3> :NERDTreeToggle<cr>
 nnoremap <silent> <C-n> :NERDTreeToggle<cr>
 nnoremap <leader>o :NERDTreeToggle<cr>
+
+" auto open or close NERDTree
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 "******************************************************************************
 "" NERDComment Settings
