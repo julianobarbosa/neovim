@@ -1,6 +1,24 @@
 # neovim
 neovim configuration files
 
+# Install
+## from source
+### get code
+```console
+git clone https://github.com/neovim/neovim.git
+```
+
+### ubuntu
+```console
+sudo apt install libtool-bin gettext libtool autoconf automake cmake libncurses5-dev g++
+```
+
+## compile
+```console
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
+```
+
 # Core
 ## <<< local_init.vim >>>
 
