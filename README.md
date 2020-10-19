@@ -8,6 +8,11 @@ neovim configuration files
 git clone https://github.com/neovim/neovim.git
 ```
 
+### centos
+```console
+yum -y install ninja-build libtool autoconf automake cmake gcc gcc-c++ make pkgconfig unzip patch
+```
+
 ### ubuntu
 ```console
 sudo apt install libtool-bin gettext libtool autoconf automake cmake libncurses5-dev g++
